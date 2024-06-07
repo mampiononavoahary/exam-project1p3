@@ -1,2 +1,14 @@
-package org.example.ConnecteurLogiqueEtNegation;public class Ou {
+package org.example.ConnecteurLogiqueEtNegation;
+
+import org.example.Conjoction;
+import org.example.enums.VerityValeur;
+
+public class Ou extends Conjoction {
+    @Override
+    protected VerityValeur evaluer(VerityValeur a, VerityValeur b) {
+        if (a == VerityValeur.VRAI || b == VerityValeur.VRAI){
+            return VerityValeur.VRAI;
+        }
+        return VerityValeur.FAUX;
+    }
 }
