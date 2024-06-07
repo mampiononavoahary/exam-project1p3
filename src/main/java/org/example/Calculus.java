@@ -28,5 +28,12 @@ public VerityValeur evaluer(Affirmation affirmation){
             return VerityValeur.JENESAISPAS;
         }
 }
+public VerityValeur valeur(Affirmation first, Affirmation second , Conjoction conjoction){
+        if (stringAffirmationMap.containsKey(first) && stringAffirmationMap.containsKey(second)){
+            return conjoction.evaluer(first.valeur(),second.valeur());
+        }else {
+            return VerityValeur.JENESAISPAS;
+        }
+}
 
 }
