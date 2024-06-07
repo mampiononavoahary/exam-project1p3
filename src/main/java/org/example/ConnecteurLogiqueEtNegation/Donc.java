@@ -6,9 +6,12 @@ import org.example.enums.VerityValeur;
 public class Donc extends Conjoction {
     @Override
     protected VerityValeur evaluer(VerityValeur a, VerityValeur b) {
-       if (a == VerityValeur.VRAI || b == VerityValeur.FAUX){
-           return VerityValeur.FAUX;
-       }
-       return VerityValeur.VRAI;
+        if (a != null && b != null){
+            if (a == VerityValeur.VRAI || b == VerityValeur.FAUX){
+                return VerityValeur.FAUX;
+            }
+            return VerityValeur.VRAI;
+        }
+      return VerityValeur.JENESAISPAS;
     }
 }
